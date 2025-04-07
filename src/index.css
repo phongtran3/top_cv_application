@@ -1,4 +1,21 @@
 :root {
-
+  --font-size-body: 16px;
+  --font-family-heading: "Young Serif", Arial, sans-serif;
+  --font-family-body: "Outfit", sans-serif;
   
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3{
+    margin: 0;
+    font-family: var(--font-family-heading);
+}
+
+p {
+  margin: 0;
 }
