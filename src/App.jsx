@@ -1,7 +1,7 @@
 import Header from "./components/Header"
 import Education from "./components/Education"
 import Experience from "./components/Experience"
-
+import Project from "./components/Project"
 
 function App() {
 
@@ -12,6 +12,7 @@ function App() {
       <Header />
       <Education />
       <Experience />
+      <Project />
     </div>
     </>
   )

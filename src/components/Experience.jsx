@@ -11,7 +11,7 @@ const Experience = () => {
     return storedData ? JSON.parse(storedData) : 
     [
       {
-        id: 1,
+        id: 0,
         title: 'E-commerce Support Associate',
         company: 'Best Cheer Stone',
         dateRange: 'June 2024 - Present',
@@ -24,7 +24,7 @@ const Experience = () => {
         ]
       },
       {
-        id: 2,
+        id: 1,
         title: 'Assistant Store Manager',
         company: '7 Leaves Cafe',
         dateRange: 'May 2021 - July 2024',
@@ -61,7 +61,8 @@ const Experience = () => {
     <section className='resume-section'> 
       <div className="section-header">
         <h1 className='section-title'>Experience</h1>
-        <EditButton onClick={handleEditClick}/>
+        {!isEditing ? <EditButton onClick={handleEditClick}/> : null}
+
       </div>
 
       {!isEditing ? 

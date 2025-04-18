@@ -4,7 +4,7 @@ const EditExperience = ({data, onSave, onCancel}) => {
   const [formData, setFormData] = useState([...data]);
   
 
-  const handleAdd = () => {
+  const handleAddExp = () => {
     console.log('Adding Experience')
 
     setFormData(prevData => {
@@ -35,14 +35,13 @@ const EditExperience = ({data, onSave, onCancel}) => {
 
   const handleBulletChange = (e, index, id) => {
     const {value} = e.target;
-    const entryId = id - 1;
     setFormData(prevData => {
       const updated = [...prevData];
-      const updatedBullets = [...updated[entryId].bullets]
+      const updatedBullets = [...updated[id].bullets]
       updatedBullets[index] = value;
 
-      updated[entryId] = {
-        ...updated[entryId],
+      updated[id] = {
+        ...updated[id],
         bullets: updatedBullets
       }
 
@@ -50,14 +49,13 @@ const EditExperience = ({data, onSave, onCancel}) => {
     })
   }
 
-  const handleAddBullet = (e, id) => {
-    const entryId = id - 1;
+  const handleAddBullet = (id) => {
     setFormData(prevData => {
       const updated = [...prevData];
-      const updatedBullets = [...updated[entryId].bullets]
+      const updatedBullets = [...updated[id].bullets]
       updatedBullets.push("");
-      updated[entryId] = {
-        ...updated[entryId],
+      updated[id] = {
+        ...updated[id],
         bullets: updatedBullets
       }
 
@@ -66,14 +64,12 @@ const EditExperience = ({data, onSave, onCancel}) => {
   }
 
   const deleteBullet = (index, id) => {
-    const entryId = id - 1;
-
     setFormData(prevData => {
       const updated = [...prevData];
-      const updatedBullets = [...updated[entryId].bullets].filter((_,i)=> i !== index);
+      const updatedBullets = [...updated[id].bullets].filter((_,i)=> i !== index);
 
-      updated[entryId] = {
-        ...updated[entryId],
+      updated[id] = {
+        ...updated[id],
         bullets: updatedBullets
       }
 
@@ -84,7 +80,12 @@ const EditExperience = ({data, onSave, onCancel}) => {
 
   const deleteExp = (index) => {
     setFormData(prevData => {
-      return prevData.filter((_,i) => i !== index);
+      const updated = prevData.filter((_,i) => i !== index);
+
+      return updated.map((exp, index) => ({
+        ...exp,
+        id: index
+      }))
     })
   }
 
@@ -129,7 +130,7 @@ const EditExperience = ({data, onSave, onCancel}) => {
               <button onClick={(e) => deleteBullet(index, expData.id)}>X</button>
               </React.Fragment>
             ))}
-            <button onClick={(e) => handleAddBullet(e, expData.id)} >Add Responsibility</button>
+            <button onClick={(e) => handleAddBullet(expData.id)} >Add Responsibility</button>
           </div>
           
       </div>
@@ -137,7 +138,7 @@ const EditExperience = ({data, onSave, onCancel}) => {
       )))}
       
        <div className="form-btn">
-        <button onClick={handleAdd}>Add Experience</button>
+        <button onClick={handleAddExp}>Add Experience</button>
         <button onClick={() => onSave(formData)}>Save</button>
         <button onClick={onCancel}>Cancel</button>
       </div>
