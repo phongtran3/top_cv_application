@@ -1,7 +1,8 @@
 import Header from "./components/Header"
 import Education from "./components/Education"
-import Experience from "./components/Experience"
-import Project from "./components/Project"
+import Experiences from "./components/Experiences"
+import Projects from "./components/Projects"
+import TechSkills from "./components/TechSkills"
 
 function App() {
 
@@ -11,8 +12,9 @@ function App() {
       <h1>Hello World App</h1>
       <Header />
       <Education />
-      <Experience />
-      <Project />
+      <Experiences />
+      <Projects />
+      <TechSkills />
     </div>
     </>
   )

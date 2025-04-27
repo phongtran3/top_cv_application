@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import EditProject from './EditProject';
 import EditButton from './editButton';
 
-const Project = () => {
+const Projects = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   const [projectData, setProjectData] = useState(() => {
@@ -85,4 +85,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default Projects

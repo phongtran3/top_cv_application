@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import EditButton from './editButton'
 import EditExperience from './EditExperience'
 
-const Experience = () => {
+const Experiences = () => {
   const [isEditing, setIsEditing] = useState(false);
 
 
@@ -83,17 +83,6 @@ const Experience = () => {
             </div>
           </div>
         ))}
-
-        {/* <div className="section-body">
-          <div className="section-entry">
-            <div className="entry-header">
-              <h2 className='entry-title'>{eduData.institution}</h2>
-              <span className='entry-date-range'>{eduData.dateRange}</span>
-            </div>
-            <h3 className='entry-subtitle'>{eduData.degree}</h3>
-            <p className='entry-location'>{eduData.location}</p>
-          </div>
-        </div> */}
       </> :
       <EditExperience data={expData} onSave={handleSave} onCancel={handleCancelClick}/>
     }
@@ -103,4 +92,4 @@ const Experience = () => {
   )
 }
 
-export default Experience
+export default Experiences
