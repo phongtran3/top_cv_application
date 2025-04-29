@@ -10,7 +10,7 @@ const Header = () => {
     return storedData ? JSON.parse(storedData) : 
       {
         name: 'Phong Tran',
-        phoneNumber: '123-456-7890',
+        phoneNumber: '(123)-456-7890',
         email: 'phongtran230@gmail.com',
         linkedIn: 'linkedin.com/in/phong-tran230/',
         github: 'github.com/phongtran3'

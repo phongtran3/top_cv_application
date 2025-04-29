@@ -138,9 +138,9 @@ const EditExperience = ({data, onSave, onCancel}) => {
       )))}
       
        <div className="form-btn">
-        <button onClick={handleAddExp}>Add Experience</button>
-        <button onClick={() => onSave(formData)}>Save</button>
-        <button onClick={onCancel}>Cancel</button>
+        <button className='add-btn' onClick={handleAddExp}>+ Add Experience</button>
+        <button className='save-btn' onClick={() => onSave(formData)}>Save</button>
+        <button className='cancel-btn' onClick={onCancel}>Cancel</button>
       </div>
     </div>
   )

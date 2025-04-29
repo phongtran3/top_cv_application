@@ -3,8 +3,6 @@ import React, {useState} from 'react'
 const EditTechSkills = ({data, onSave, onCancel}) => {
   const [formData, setFormData] = useState([...data]);
 
-
-
   const handleAddSkill = () => {
     setFormData(prevData => {
       const updated = [
@@ -16,14 +14,7 @@ const EditTechSkills = ({data, onSave, onCancel}) => {
       ]
       return updated;
     })
-
-
   }
-
-  // updated[projectId] = {
-  //   ...updated[projectId],
-  //   bullets: updatedBullets,
-  // }
 
   const handleCategoryChange = (e, index) => {
     const {name, value} = e.target;
@@ -35,7 +26,6 @@ const EditTechSkills = ({data, onSave, onCancel}) => {
       }
       return updated;
     })
-
   }   
 
   const handleSkillChange = (e, index) => {
@@ -88,9 +78,9 @@ const EditTechSkills = ({data, onSave, onCancel}) => {
         ))}
 
       <div className="form-btn">
-        <button onClick={handleAddSkill}>Add Skill</button>
-        <button onClick={() => onSave(formData)}>Save</button>
-        <button onClick={onCancel}>Cancel</button>
+        <button className='add-btn' onClick={handleAddSkill}>+ Add Skill</button>
+        <button className='save-btn' onClick={() => onSave(formData)}>Save</button>
+        <button className='cancel-btn' onClick={onCancel}>Cancel</button>
       </div>
 
     </div>

@@ -9,7 +9,6 @@ function App() {
   return (
     <>
     <div className="resume-container">
-      <h1>Hello World App</h1>
       <Header />
       <Education />
       <Experiences />

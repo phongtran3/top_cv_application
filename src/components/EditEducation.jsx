@@ -36,8 +36,8 @@ const EditEducation = ({data, onSave, onCancel}) => {
 
       </div>
       <div className="form-btn">
-        <button onClick={() => onSave(formData)}>Save</button>
-        <button onClick={onCancel}>Cancel</button>
+        <button className='save-btn' onClick={() => onSave(formData)}>Save</button>
+        <button className='cancel-btn' onClick={onCancel}>Cancel</button>
       </div>
     </div>
   )
