@@ -45,9 +45,8 @@ const TechSkills = () => {
   return (
     <section className='resume-section'>
       <div className="section-header">
-        <h1 className='section-title'>Technical Skills</h1>
         {!isEditing ? <EditButton onClick={handleEditClick}/> : null}
-
+        <h1 className='section-title'>Technical Skills</h1>
       </div>
       
       {!isEditing ? 

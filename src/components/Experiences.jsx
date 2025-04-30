@@ -60,9 +60,8 @@ const Experiences = () => {
   return (
     <section className='resume-section'> 
       <div className="section-header">
-        <h1 className='section-title'>Experience</h1>
         {!isEditing ? <EditButton onClick={handleEditClick}/> : null}
-
+        <h1 className='section-title'>Experience</h1>
       </div>
 
       {!isEditing ? 
@@ -72,9 +71,14 @@ const Experiences = () => {
           <div className="section-body" key={exp.id}>
             <div className="section-entry">
             <div className="entry-header">
-              <h2 className='entry-title'>{[exp.company, exp.title, exp.location].filter(Boolean).join(', ')}</h2>
+              <div className="entry-header-left">
+                <h2 className='entry-title'>{[exp.company, exp.title].filter(Boolean).join(', ')}</h2>
+                <span className='entry-location'>{exp.location}</span>
+              </div>
               <span className='entry-date-range'>{exp.dateRange}</span>
+
             </div>
+              
             <ul className="entry-bullets">
               {exp.bullets.map((bullet, index) => (
                 <li className='entry-bullet' key={index}>{bullet}</li>

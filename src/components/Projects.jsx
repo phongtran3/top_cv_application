@@ -48,9 +48,8 @@ const Projects = () => {
   return (
     <section className='resume-section'>
       <div className="section-header">
-        <h1 className='section-title'>Project</h1>
         {!isEditing ? <EditButton onClick={handleEditClick}/> : null}
-        
+        <h1 className='section-title'>Project</h1>
       </div>
 
       {!isEditing ? 
@@ -60,13 +59,17 @@ const Projects = () => {
           <div className="section-body" key={project.id}>
             <div className="section-entry">
             <div className="entry-header">
-              <h2 className='entry-title'>{project.title}</h2>
-              <div className='project-links'>
-                <a href={project.projectLink} target="_blank" rel="noopener noreferrer">Live</a>
-                <a href={project.projectCode} target="_blank" rel="noopener noreferrer">Code</a>
+              <div className="entry-header-left">
+                <h2 className='entry-title'>{project.title}</h2>
+                <div className='project-links'>
+                  <a className='project-link' href={project.projectLink} target="_blank" rel="noopener noreferrer">Live</a>
+                  <a className='project-link' href={project.projectCode} target="_blank" rel="noopener noreferrer">Code</a>
+                </div>
               </div>
               <span className='entry-date-range'>{project.dateRange}</span>
+
             </div>
+
             <ul className="entry-bullets">
               {project.bullets.map((bullet, index) => (
                 <li className='entry-bullet' key={index}>{bullet}</li>

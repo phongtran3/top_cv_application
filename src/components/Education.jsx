@@ -40,8 +40,8 @@ const Education = () => {
   return (
     <section className='resume-section'>
       <div className="section-header">
+        {!isEditing ? <EditButton onClick={handleEditClick}/> : null}
         <h1 className='section-title'>Education</h1>
-        <EditButton onClick={handleEditClick}/>
       </div>
       {!isEditing ? 
       <>
@@ -49,11 +49,13 @@ const Education = () => {
         <div className="section-body">
           <div className="section-entry">
             <div className="entry-header">
-              <h2 className='entry-title'>{eduData.institution}</h2>
+              <div className="entry-header-left">
+                <h2 className='entry-title'>{eduData.institution},</h2>
+                <span className='entry-location'>{eduData.location}</span>
+              </div>
               <span className='entry-date-range'>{eduData.dateRange}</span>
             </div>
             <h3 className='entry-subtitle'>{eduData.degree}</h3>
-            <p className='entry-location'>{eduData.location}</p>
           </div>
         </div>
       </> :
