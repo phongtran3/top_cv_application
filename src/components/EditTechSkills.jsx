@@ -52,7 +52,7 @@ const EditTechSkills = ({data, onSave, onCancel}) => {
       <p>Please seperate skills by comma.</p>
         {formData.map((group, index) => (
         <div className="edit-skill-form" key={index}>
-          <button onClick={(e) => deleteSkill(index)}>X</button>
+          <button className='delete-form-btn' onClick={(e) => deleteSkill(index)}>X</button>
 
             <React.Fragment >
               <label>

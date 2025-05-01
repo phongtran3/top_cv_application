@@ -93,7 +93,7 @@ const EditProject = ({data, onSave, onCancel}) => {
     <div className='edit-exp-container'>
       {formData.map((project, index) => (
         <div className="edit-project-form" key={project.id}>
-         <button onClick={(e) => deleteProject(index)}>X</button>
+         <button className='delete-form-btn' onClick={(e) => deleteProject(index)}>X</button>
          <label>
               Title:
               <input type='text' value={project.title} name='title' onChange={(e) => handleChange(e, index)} />
@@ -126,10 +126,10 @@ const EditProject = ({data, onSave, onCancel}) => {
                   placeholder='Add bullet points'
                 />
               </label>
-              <button onClick={(e) => deleteBullet(index, project.id)}>X</button>
+              <button className='delete-bullet-btn' onClick={(e) => deleteBullet(index, project.id)}>X</button>
               </React.Fragment>
             ))}
-            <button onClick={(e) => handleAddBullet(project.id)} >Add Bullet</button>
+            <button className="add-bullet" onClick={(e) => handleAddBullet(project.id)}>+ Add Bullet</button>
           </div>
         </div>
       ))}

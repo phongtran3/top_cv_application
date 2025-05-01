@@ -76,7 +76,8 @@ body {
   background-color: var(--darkGray);
 }
 
-.add-btn {
+.add-btn,
+.add-bullet {
   cursor: pointer;
   background-color: var(--gainsboro);
   color: var(--black);
@@ -86,13 +87,15 @@ body {
 }
 
 .add-btn:hover,
-.add-btn:focus {
+.add-btn:focus,
+.add-bullet:hover,
+.add-bullet:focus {
   background-color: #A9A9A9;
 }
 
 .resume-container{
   background-color: var(--white);
-  padding: 1rem;
+  padding: clamp(1rem, 4vw, 2rem) clamp(1rem, 4vw, 5rem);
   max-width: 816px;
   min-height: 1056px;
   margin: 1rem auto 0;
@@ -126,7 +129,7 @@ body {
 
 .resume-section,
 .section-body  {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .section-header {
@@ -163,5 +166,84 @@ body {
   margin-bottom: .1rem;
 }
 
+.entry-bullet {
+  margin-bottom: .15rem;
+}
+
+.form-btn {
+  display: flex;
+  column-gap: .5rem;
+  justify-content: flex-end;
+}
+
+.edit-header-form,
+.edit-edu-form {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.edit-header-form label,
+.edit-edu-form label {
+  display: flex;
+  flex-direction: column;
+  row-gap: .25rem;
+  width: 100%;
+}
 
 
+.edit-exp-form {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.edit-exp-form label {
+  display: flex;
+  flex-direction: column;
+  row-gap: .25rem;
+  width: 100%;
+}
+
+.delete-form-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+}
+
+.delete-form-btn:hover,
+.delete-form-btn:focus {
+  font-weight: bold;
+}
+
+.delete-bullet-btn {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.delete-form-btn:hover,
+.delete-form-btn:focus,
+.delete-bullet-btn:hover,
+.delete-bullet-btn:focus {
+  font-weight: bold;
+}
+
+
+.add-bullet {
+
+}
+
+
+@media screen and (min-width: 500px) {
+  .edit-header-form label,
+  .edit-edu-form label {
+    width: calc(50% - .5rem);
+  }
+
+
+}

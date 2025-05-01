@@ -94,7 +94,7 @@ const EditExperience = ({data, onSave, onCancel}) => {
     <div className='edit-exp-container'>
       {formData.map(((expData, index) => (
         <div className="edit-exp-form" key={expData.id}>
-         <button onClick={(e) => deleteExp(index)}>X</button>
+         <button className='delete-form-btn' onClick={(e) => deleteExp(index)}>X</button>
           <label>
               Company:
               <input type='text' value={expData.company} name='company' onChange={(e) => handleChange(e, index)} />
@@ -116,6 +116,7 @@ const EditExperience = ({data, onSave, onCancel}) => {
           </label>
 
           <div className="bullets-container">
+            Bullets: 
             {expData.bullets.map((bullet, index) => (
               <React.Fragment key={index}>
               <label>
@@ -127,10 +128,10 @@ const EditExperience = ({data, onSave, onCancel}) => {
                   placeholder='Add responsibility'
                 />
               </label>
-              <button onClick={(e) => deleteBullet(index, expData.id)}>X</button>
+              <button className='delete-bullet-btn' onClick={(e) => deleteBullet(index, expData.id)}>X</button>
               </React.Fragment>
             ))}
-            <button onClick={(e) => handleAddBullet(expData.id)} >Add Responsibility</button>
+            <button className="add-bullet" onClick={(e) => handleAddBullet(expData.id)} >+ Add Bullet</button>
           </div>
           
       </div>
