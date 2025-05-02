@@ -120,15 +120,15 @@ const EditExperience = ({data, onSave, onCancel}) => {
             {expData.bullets.map((bullet, index) => (
               <React.Fragment key={index}>
               <label>
-                <input 
-                  type='text' 
+                <textarea 
                   value={bullet} 
                   name={`bullet-${index + 1}`} 
                   onChange={(e) => handleBulletChange(e, index, expData.id)}
                   placeholder='Add responsibility'
+                  wrap='soft'
                 />
+               <button className='delete-bullet-btn' onClick={(e) => deleteBullet(index, expData.id)}>X</button>
               </label>
-              <button className='delete-bullet-btn' onClick={(e) => deleteBullet(index, expData.id)}>X</button>
               </React.Fragment>
             ))}
             <button className="add-bullet" onClick={(e) => handleAddBullet(expData.id)} >+ Add Bullet</button>

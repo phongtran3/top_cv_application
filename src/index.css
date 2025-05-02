@@ -86,6 +86,10 @@ body {
   border-radius: 4px;
 }
 
+.add-bullet {
+  margin-left: auto;
+}
+
 .add-btn:hover,
 .add-btn:focus,
 .add-bullet:hover,
@@ -130,10 +134,10 @@ body {
 .resume-section,
 .section-body  {
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .section-header {
-  position: relative;
   display: flex;
   align-items: center;
   margin-bottom: .5rem;
@@ -177,7 +181,8 @@ body {
 }
 
 .edit-header-form,
-.edit-edu-form {
+.edit-edu-form,
+.edit-exp-form {
   margin-bottom: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -193,16 +198,10 @@ body {
   width: 100%;
 }
 
-
-.edit-exp-form {
-  position: relative;
-  margin-bottom: 1rem;
-}
-
 .edit-exp-form label {
   display: flex;
   flex-direction: column;
-  row-gap: .25rem;
+  row-gap: .5rem;
   width: 100%;
 }
 
@@ -213,6 +212,7 @@ body {
   font-size: 1rem;
   background: transparent;
   border: none;
+  padding: 0;
 }
 
 .delete-form-btn:hover,
@@ -224,6 +224,9 @@ body {
   cursor: pointer;
   border: none;
   background: transparent;
+  position: absolute;
+  right: 0;
+  padding: 0
 }
 
 .delete-form-btn:hover,
@@ -233,17 +236,36 @@ body {
   font-weight: bold;
 }
 
+.bullets-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
 
-.add-bullet {
-
+.bullets-container textarea {
+  margin-right: 1rem;
+  min-height: 75px;
+  border-radius: 4px;
+  padding: .5rem;
 }
 
 
 @media screen and (min-width: 500px) {
   .edit-header-form label,
-  .edit-edu-form label {
+  .edit-edu-form label,
+  .edit-exp-form > label {
     width: calc(50% - .5rem);
   }
 
+  .delete-form-btn,
+  .delete-bullet-btn {
+    padding: revert;
+  }
+
+  .edit-exp-form {
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    padding: 1rem;
+  }
 
 }
