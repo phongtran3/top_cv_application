@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import EditButton from './editButton';
+import EditButton from './EditButton';
 import EditHeader from './EditHeader';
 
 const Header = () => {

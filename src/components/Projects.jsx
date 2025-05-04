@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import EditProject from './EditProject';
-import EditButton from './editButton';
+import EditButton from './EditButton'
 
 const Projects = () => {
   const [isEditing, setIsEditing] = useState(false);
