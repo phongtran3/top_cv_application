@@ -48,6 +48,7 @@ const TechSkills = () => {
         {!isEditing ? <EditButton onClick={handleEditClick}/> : null}
         <h1 className='section-title'>Technical Skills</h1>
       </div>
+      {isEditing ? <p>Please seperate skills by comma.</p>: null}
       
       {!isEditing ? 
       <>

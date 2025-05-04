@@ -34,6 +34,9 @@ ul {
   padding-left: 1rem;
 }
 
+input {
+  padding: .25rem;
+}
 
 body {
   margin: 0;
@@ -166,8 +169,13 @@ body {
   column-gap: .5rem;
 }
 
+.project-link:hover,
+.project-link:focus {
+  font-weight: bold;
+}
+
 .skill {
-  margin-bottom: .1rem;
+  margin-bottom: .5rem;
 }
 
 .entry-bullet {
@@ -182,7 +190,8 @@ body {
 
 .edit-header-form,
 .edit-edu-form,
-.edit-exp-form {
+.edit-exp-form,
+.edit-project-form {
   margin-bottom: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -191,14 +200,16 @@ body {
 }
 
 .edit-header-form label,
-.edit-edu-form label {
+.edit-edu-form label,
+.edit-project-form label {
   display: flex;
   flex-direction: column;
   row-gap: .25rem;
   width: 100%;
 }
 
-.edit-exp-form label {
+.edit-exp-form label,
+.edit-project-form label {
   display: flex;
   flex-direction: column;
   row-gap: .5rem;
@@ -246,7 +257,31 @@ body {
   margin-right: 1rem;
   min-height: 75px;
   border-radius: 4px;
-  padding: .5rem;
+  padding: .25rem; 
+}
+
+
+.edit-exp-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  row-gap: .5rem;
+  width: 100%;
+}
+
+.edit-skill-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+}
+
+.edit-skill-form input {
+  width: calc(100% - 1rem);
+}
+
+.edit-skill-form textarea {
+  width: 100%;
+  padding: .25rem;
 }
 
 
@@ -259,10 +294,12 @@ body {
 
   .delete-form-btn,
   .delete-bullet-btn {
-    padding: revert;
+    padding-right: .75rem;
   }
 
-  .edit-exp-form {
+  .edit-exp-form,
+  .edit-project-form,
+  .edit-skill-form {
     border: 1px solid var(--gray);
     border-radius: 8px;
     padding: 1rem;

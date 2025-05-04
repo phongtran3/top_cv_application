@@ -118,15 +118,15 @@ const EditProject = ({data, onSave, onCancel}) => {
             {project.bullets.map((bullet, index) => (
               <React.Fragment key={index}>
               <label>
-                <input 
-                  type='text' 
+                <textarea 
                   value={bullet} 
                   name={`bullet-${index + 1}`} 
                   onChange={(e) => handleBulletChange(e, index, project.id)}
                   placeholder='Add bullet points'
+                  wrap='soft'
                 />
+                <button className='delete-bullet-btn' onClick={(e) => deleteBullet(index, project.id)}>X</button>
               </label>
-              <button className='delete-bullet-btn' onClick={(e) => deleteBullet(index, project.id)}>X</button>
               </React.Fragment>
             ))}
             <button className="add-bullet" onClick={(e) => handleAddBullet(project.id)}>+ Add Bullet</button>

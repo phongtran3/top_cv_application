@@ -49,7 +49,6 @@ const EditTechSkills = ({data, onSave, onCancel}) => {
 
   return (
     <div className='edit-exp-container'>
-      <p>Please seperate skills by comma.</p>
         {formData.map((group, index) => (
         <div className="edit-skill-form" key={index}>
           <button className='delete-form-btn' onClick={(e) => deleteSkill(index)}>X</button>
@@ -66,10 +65,10 @@ const EditTechSkills = ({data, onSave, onCancel}) => {
 
               <label>
                 <textarea  
-                  type='text' 
                   name='skills' 
                   value={group.skills.join(', ')} onChange={(e) => handleSkillChange(e,index)}
                   placeholder='E.g. Javascript, React, Node.js'
+                  wrap='soft'
                 /> 
               </label>
             </React.Fragment>
